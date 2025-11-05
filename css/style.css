@@ -233,6 +233,20 @@ body {
     border: 1px solid #E0E0E0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    margin-bottom: var(--spacing-md);
+}
+
+.info-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Reduce info-card spacing when not in a grid (for standalone cards) */
+.section > .info-card {
+    margin-bottom: var(--spacing-sm);
+}
+
+.section > .info-card:last-of-type {
+    margin-bottom: 0;
 }
 
 .info-card:hover {
@@ -737,11 +751,40 @@ body {
         margin-bottom: var(--spacing-md);
     }
     
+    .section h3 {
+        margin-top: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .section p {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    /* Reduce info-card spacing on mobile */
+    .info-card {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    /* Even tighter spacing for standalone info-cards in sections */
+    .section > .info-card {
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .section > .info-card:last-of-type {
+        margin-bottom: 0;
+    }
+    
     .info-grid,
     .rights-grid,
     .responsibilities-grid,
     .availability-info {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin: var(--spacing-md) 0;
+    }
+    
+    .services-grid {
         gap: var(--spacing-md);
         margin: var(--spacing-md) 0;
     }
