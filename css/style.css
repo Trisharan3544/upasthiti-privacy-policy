@@ -157,6 +157,22 @@ body {
     padding-bottom: var(--spacing-xl);
     padding-top: var(--spacing-lg);
     border-bottom: 1px solid #E0E0E0;
+    /* Ensure sections are visible in WebView */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    position: relative;
+}
+
+/* Specific fix for Advertising section - ensure it's always visible */
+#advertising {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: auto !important;
+    overflow: visible !important;
 }
 
 .section:last-child {
