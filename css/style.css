@@ -726,11 +726,24 @@ body {
         font-size: 2rem;
     }
     
+    /* Reduce section spacing on mobile */
+    .section {
+        margin-bottom: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+        padding-top: var(--spacing-md);
+    }
+    
+    .section h2 {
+        margin-bottom: var(--spacing-md);
+    }
+    
     .info-grid,
     .rights-grid,
     .responsibilities-grid,
     .availability-info {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin: var(--spacing-md) 0;
     }
     
     .footer-content {
