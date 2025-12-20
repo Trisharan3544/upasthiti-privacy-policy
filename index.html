@@ -122,8 +122,8 @@
                         <h3>Legal Basis for Processing (GDPR)</h3>
                         <p>If you are located in the European Economic Area (EEA), we process your personal data based on the following legal bases under GDPR:</p>
                         <ul>
-                            <li><strong>Consent:</strong> When you register for an account, you provide consent for us to process your account information. When you consent to personalized advertising through the UMP consent form, you consent to ad-related data processing.</li>
-                            <li><strong>Legitimate Interest:</strong> We process data for app analytics, security, fraud prevention, and service improvement based on our legitimate interest in providing and improving our services.</li>
+                            <li><strong>Consent:</strong> When you register for an account, you provide consent for us to process your account information. When you consent to personalized advertising and analytics through the UMP consent form, you consent to ad-related and analytics data processing. <strong>Analytics data collection only occurs after you grant explicit consent. If you reject consent or withdraw it, analytics collection is immediately disabled.</strong></li>
+                            <li><strong>Legitimate Interest:</strong> We process data for security, fraud prevention, and service improvement based on our legitimate interest in providing and improving our services. <strong>Note: Analytics data processing is based on consent, not legitimate interest, for EEA users.</strong></li>
                             <li><strong>Legal Obligation:</strong> We process data to comply with legal obligations, such as data retention requirements, tax obligations, or responding to legal requests.</li>
                             <li><strong>Contract Performance:</strong> We process data to perform our contract with you, including providing attendance management services and app functionality.</li>
                         </ul>
@@ -183,7 +183,7 @@
                                 <li><strong>Firebase Authentication:</strong> For secure user authentication, account management, and email verification</li>
                                 <li><strong>Cloud Firestore:</strong> For secure data storage, real-time synchronization, and data queries</li>
                                 <li><strong>Firebase Storage:</strong> For secure photo storage and file management</li>
-                                <li><strong>Firebase Analytics:</strong> For app usage analytics, user behavior tracking, and performance monitoring</li>
+                                <li><strong>Firebase Analytics:</strong> For app usage analytics, user behavior tracking, and performance monitoring. Analytics data collection only occurs after you grant explicit consent (for EEA users). If you reject consent or withdraw it, analytics collection is immediately disabled.</li>
                                 <li><strong>Firebase Crashlytics:</strong> For crash reporting, error tracking, and app stability monitoring</li>
                             </ul>
                             <div class="service-links">
@@ -294,7 +294,7 @@
                         <ul>
                             <li><strong>Accept All:</strong> Allows personalized ads and data collection for advertising purposes. Ads will be tailored to your interests based on your device information and app usage.</li>
                             <li><strong>Reject All:</strong> Blocks personalized ads and limits data collection. You may still see non-personalized ads, but they will not be based on your interests or device information.</li>
-                            <li><strong>Customize:</strong> Allows you to choose specific data types to allow or block. You can select which purposes you consent to (e.g., personalized ads, analytics, etc.).</li>
+                            <li><strong>Customize:</strong> Allows you to choose specific data types to allow or block. You can select which purposes you consent to (e.g., personalized ads, analytics, etc.). Analytics data collection will only occur if you explicitly grant consent for analytics purposes. If you do not grant consent for analytics, analytics collection will be disabled.</li>
                         </ul>
                     </div>
 
@@ -303,9 +303,10 @@
                         <ul>
                             <li>Your consent choice is saved locally on your device</li>
                             <li>The app will remember your choice and will not show the consent form again unless you reset it</li>
-                            <li>Your consent choice determines whether personalized ads can be shown to you</li>
-                            <li>If you accept consent, ads will be displayed normally throughout the app</li>
-                            <li>If you reject consent, personalized ads will be blocked, and only limited non-personalized ads may be shown</li>
+                            <li>Your consent choice determines whether personalized ads and analytics data collection are enabled</li>
+                            <li>If you accept consent: Personalized ads and analytics data collection will be enabled</li>
+                            <li>If you reject consent: Personalized ads will be blocked, analytics data collection will be immediately disabled, and only limited non-personalized ads may be shown</li>
+                            <li><strong>Analytics data collection starts only after you grant explicit consent. If you reject consent or withdraw it at any time, analytics collection stops immediately</strong></li>
                         </ul>
                     </div>
 
@@ -331,10 +332,11 @@
                     <div class="info-card">
                         <h3>Consent and Your Data</h3>
                         <ul>
-                            <li>Your consent choice only affects advertising-related data collection</li>
-                            <li>Your app data (attendance records, student information, classes) is not affected by your advertising consent choice</li>
+                            <li>Your consent choice affects both advertising-related data collection and analytics data collection</li>
+                            <li><strong>Analytics data collection only occurs after you grant explicit consent (for EEA users). If you reject consent or withdraw it, analytics collection is immediately disabled.</strong></li>
+                            <li>Your app data (attendance records, student information, classes) is not affected by your advertising or analytics consent choice</li>
                             <li>We do not share your personal information (name, email, student data) with advertisers regardless of your consent choice</li>
-                            <li>Your consent is specific to advertising and does not affect other app functionality</li>
+                            <li>Your consent is specific to advertising and analytics, and does not affect other app functionality</li>
                         </ul>
                     </div>
                 </section>
