@@ -7,8 +7,8 @@
 // Account Deletion URL
 // Update this with your actual GitHub Pages URL for account deletion
 const CONFIG = {
-    // Account Deletion URL (update with your GitHub username)
-    ACCOUNT_DELETION_URL: 'https://your-username.github.io/upasthiti-account-deletion/',
+    // Account Deletion URL
+    ACCOUNT_DELETION_URL: 'https://trisharan3544.github.io/upasthiti-account-deletion/',
     
     // Contact Email
     CONTACT_EMAIL: 'teamupasthiti@gmail.com'
