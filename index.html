@@ -546,6 +546,7 @@
                 <div class="footer-links">
                     <a href="index.html" class="footer-link">Privacy Policy</a>
                     <a href="terms.html" class="footer-link">Terms of Service</a>
+                    <a href="#" id="account-deletion-link" class="footer-link" target="_blank" rel="noopener noreferrer">Delete Account</a>
                 </div>
             </div>
         </div>
@@ -558,7 +559,18 @@
         </svg>
     </button>
 
+    <script src="js/config.js"></script>
     <script>
+        // Set account deletion link from config
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.APP_CONFIG) {
+                const accountDeletionLink = document.getElementById('account-deletion-link');
+                if (accountDeletionLink) {
+                    accountDeletionLink.href = window.APP_CONFIG.ACCOUNT_DELETION_URL;
+                }
+            }
+        });
+        
         // Back to top functionality
         function scrollToTop() {
             window.scrollTo({
