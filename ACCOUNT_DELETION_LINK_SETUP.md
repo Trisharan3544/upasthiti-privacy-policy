@@ -6,11 +6,23 @@ The Privacy Policy and Terms of Service pages now include a "Delete Account" lin
 
 ## 📝 Configuration
 
-### Step 1: Update Config File
+### ⚠️ IMPORTANT: Update URLs in HTML Files
 
-Edit the file: **`js/config.js`**
+**You MUST replace `your-username` with your actual GitHub username in the HTML files:**
 
-Update the account deletion URL with your actual GitHub Pages URL:
+### Files to Update:
+1. `index.html` - Line 549 (footer link)
+2. `terms.html` - Line 468 (footer link)
+
+**Find and replace:**
+- `https://your-username.github.io/upasthiti-account-deletion/`
+
+**With your actual URL:**
+- `https://[YOUR-ACTUAL-USERNAME].github.io/upasthiti-account-deletion/`
+
+### Step 2: Optional - Update Config File
+
+You can also update **`js/config.js`** to override the HTML URL:
 
 ```javascript
 const CONFIG = {
@@ -22,9 +34,7 @@ const CONFIG = {
 };
 ```
 
-### Step 2: Replace Your Username
-
-Replace `your-username` with your actual GitHub username.
+**Note**: The HTML files have default URLs that work immediately. The config.js file can override them if you prefer centralized configuration.
 
 **Example:**
 If your GitHub username is `johnsmith`, update to:

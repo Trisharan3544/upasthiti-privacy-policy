@@ -546,7 +546,7 @@
                 <div class="footer-links">
                     <a href="index.html" class="footer-link">Privacy Policy</a>
                     <a href="terms.html" class="footer-link">Terms of Service</a>
-                    <a href="#" id="account-deletion-link" class="footer-link" target="_blank" rel="noopener noreferrer">Delete Account</a>
+                    <a href="https://trisharan3544.github.io/upasthiti-account-deletion/" id="account-deletion-link" class="footer-link" target="_blank" rel="noopener noreferrer">Delete Account</a>
                 </div>
             </div>
         </div>
@@ -561,15 +561,27 @@
 
     <script src="js/config.js"></script>
     <script>
-        // Set account deletion link from config
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.APP_CONFIG) {
-                const accountDeletionLink = document.getElementById('account-deletion-link');
-                if (accountDeletionLink) {
-                    accountDeletionLink.href = window.APP_CONFIG.ACCOUNT_DELETION_URL;
+        // Set account deletion link from config (updates default URL if config is available)
+        (function() {
+            function updateAccountDeletionLink() {
+                if (window.APP_CONFIG && window.APP_CONFIG.ACCOUNT_DELETION_URL) {
+                    const accountDeletionLink = document.getElementById('account-deletion-link');
+                    if (accountDeletionLink) {
+                        accountDeletionLink.href = window.APP_CONFIG.ACCOUNT_DELETION_URL;
+                    }
                 }
             }
-        });
+            
+            // Try immediately if config is already loaded
+            if (window.APP_CONFIG) {
+                updateAccountDeletionLink();
+            } else {
+                // Wait for config to load
+                document.addEventListener('DOMContentLoaded', updateAccountDeletionLink);
+                // Also try after a short delay in case script loads async
+                setTimeout(updateAccountDeletionLink, 100);
+            }
+        })();
         
         // Back to top functionality
         function scrollToTop() {
