@@ -171,6 +171,43 @@
                     </div>
                 </section>
 
+                <!-- Crash Reporting and Diagnostics -->
+                <section class="section" id="crash-reporting">
+                    <h2>Crash Reporting and Diagnostics (Firebase Crashlytics)</h2>
+                    <p>We use Firebase Crashlytics to help us detect crashes, errors, and performance issues so that we can keep the Upasthiti app stable and reliable.</p>
+
+                    <div class="info-card">
+                        <h3>What Information Crashlytics Collects</h3>
+                        <ul>
+                            <li><strong>App Information:</strong> App name, package name, app version, build type (debug or release), and the screen or feature that was active when the crash occurred.</li>
+                            <li><strong>Device Information:</strong> Device model and manufacturer, operating system version and API level, language and region settings.</li>
+                            <li><strong>Diagnostic Data:</strong> Crash logs and stack traces, error messages, timestamps, and basic information about how the app was being used immediately before the crash.</li>
+                            <li><strong>Limited Identifiers:</strong> A randomly generated app instance ID, and in some cases a Firebase user ID or a hashed version of your email address so that we can group related crash reports and investigate account‑specific issues.</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>How We Use Crash Data</h3>
+                        <ul>
+                            <li>Detect and analyze crashes and technical errors</li>
+                            <li>Understand which devices, OS versions, or app versions are affected</li>
+                            <li>Improve app performance, stability, and security</li>
+                            <li>Prevent the same issues from happening again in future updates</li>
+                        </ul>
+                        <p>Crash reporting data is <strong>not</strong> used to personally identify you in everyday use, to build marketing or advertising profiles, or to show targeted ads. Your attendance data, student information, and class data are not intentionally stored in crash reports.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Data Minimization and Legal Basis</h3>
+                        <ul>
+                            <li>We apply the GDPR <strong>data‑minimization</strong> principle by collecting only the diagnostic information that is necessary to debug problems.</li>
+                            <li>We configure Crashlytics to focus on technical details (such as stack traces and device/app metadata) rather than personal content.</li>
+                            <li>Firebase acts as our data processor for crash reporting and handles this information in accordance with Google&rsquo;s privacy and security practices.</li>
+                            <li>We rely on our <strong>legitimate interest</strong> in providing a secure and stable service as the legal basis for this processing under GDPR.</li>
+                        </ul>
+                    </div>
+                </section>
+                
                 <!-- Third-Party Services -->
                 <section class="section" id="third-party">
                     <h2>Third-Party Services</h2>
@@ -184,7 +221,7 @@
                                 <li><strong>Cloud Firestore:</strong> For secure data storage, real-time synchronization, and data queries</li>
                                 <li><strong>Firebase Storage:</strong> For secure photo storage and file management</li>
                                 <li><strong>Firebase Analytics:</strong> For app usage analytics, user behavior tracking, and performance monitoring. Analytics data collection only occurs after you grant explicit consent (for EEA users). If you reject consent or withdraw it, analytics collection is immediately disabled.</li>
-                                <li><strong>Firebase Crashlytics:</strong> For crash reporting, error tracking, and app stability monitoring</li>
+                                <li><strong>Firebase Crashlytics:</strong> For crash reporting, error tracking, and app stability monitoring. Crash data is used only to diagnose technical issues and improve the app, not for advertising or profiling.</li>
                             </ul>
                             <div class="service-links">
                                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="service-link">Google Privacy Policy</a>
