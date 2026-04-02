@@ -8,6 +8,7 @@ This repository contains the privacy policy and terms of service for the Upasthi
 upasthiti-privacy-policy/
 ├── index.html          # Privacy Policy page
 ├── terms.html          # Terms of Service page
+├── landing.html        # App Landing page
 ├── css/
 │   └── style.css       # Custom CSS with purple theme
 ├── images/
