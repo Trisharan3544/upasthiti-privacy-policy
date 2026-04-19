@@ -6,7 +6,7 @@
     <title>Privacy Policy - Upasthiti</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <meta name="description" content="Privacy Policy for Upasthiti - Digital Attendance Management System">
+    <meta name="description" content="Privacy Policy for Upasthiti — attendance management for teachers. On Google Play the app is listed as Upasthiti - Swipe Attendance.">
 </head>
 <body>
     <!-- Header -->
@@ -17,7 +17,7 @@
                     <img src="images/Upasthiti Logo Design.png" alt="Upasthiti Logo" class="logo-img" onerror="this.style.display='none'">
                     <h1 class="app-name">Upasthiti</h1>
                 </div>
-                <p class="tagline">Digital Attendance Management System</p>
+                <p class="tagline">Swipe Attendance</p>
             </div>
         </div>
     </header>
@@ -32,8 +32,9 @@
                 <!-- Introduction -->
                 <section class="section" id="introduction">
                     <h2>Introduction</h2>
-                    <p>Upasthiti ("we", "us", or "our") operates the Upasthiti mobile application (the "App"). This Privacy Policy informs you of our policies regarding the collection, use, and disclosure of personal information when you use our App.</p>
+                    <p>Upasthiti (referred to as 'Upasthiti - Swipe Attendance' on Google Play) ("we", "us", or "our") operates the mobile application (the "App"). This Privacy Policy informs you of our policies regarding the collection, use, and disclosure of personal information when you use our App.</p>
                     <p>By using our App, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, do not use our App.</p>
+                    <p><strong>Accuracy:</strong> This policy describes our practices as implemented in the current version of the App and our use of third-party services (Google Firebase, AdMob, and related tools). Third-party services have their own terms and may change over time; where they differ, their documentation also applies.</p>
                 </section>
 
                 <!-- Information We Collect -->
@@ -71,7 +72,7 @@
                             <li>Device model, manufacturer, and hardware specifications</li>
                             <li>Operating system version and Android API level</li>
                             <li>App version and installation information</li>
-                            <li>Device identifiers (Android ID, Advertising ID) for app functionality and analytics</li>
+                            <li>Device identifiers such as the <strong>Advertising ID</strong> (where used for ads) and identifiers used by Firebase for app functionality, diagnostics, and (when enabled) analytics</li>
                             <li>Network information (IP address, connection type) for connectivity and sync</li>
                             <li>Crash reports, error logs, and performance metrics for app improvement</li>
                             <li>Screen resolution and display settings for optimal user experience</li>
@@ -81,13 +82,9 @@
                     <div class="info-card">
                         <h3>📈 Usage Information</h3>
                         <ul>
-                            <li>App usage patterns, session duration, and feature interactions</li>
-                            <li>Class and student management activities (create, edit, delete operations)</li>
-                            <li>Attendance marking frequency and patterns</li>
-                            <li>Report generation and export activities</li>
-                            <li>Settings and preferences changes</li>
-                            <li>Navigation patterns and feature adoption rates</li>
-                            <li>Error occurrences and user feedback</li>
+                            <li>When <strong>Firebase Analytics</strong> is enabled for your device (see the Advertising / consent sections below), the app may send <strong>aggregated usage events</strong> we configure (for example sign-in, registration, or attendance-related events) to Firebase, as described in <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google&rsquo;s Firebase documentation</a></li>
+                            <li>Operational data processed when you use the App (for example syncing classes, students, and attendance with Firestore, generating reports, and storing preferences needed for the service)</li>
+                            <li>Diagnostics and errors via <strong>Firebase Crashlytics</strong> in release builds (see the Crashlytics section)</li>
                         </ul>
                     </div>
                 </section>
@@ -116,8 +113,8 @@
                         <h3>Legal Basis for Processing (GDPR)</h3>
                         <p>If you are located in the European Economic Area (EEA), we process your personal data based on the following legal bases under GDPR:</p>
                         <ul>
-                            <li><strong>Consent:</strong> When you register for an account, you provide consent for us to process your account information. When you consent to personalized advertising and analytics through the UMP consent form, you consent to ad-related and analytics data processing. <strong>Analytics data collection only occurs after you grant explicit consent. If you reject consent or withdraw it, analytics collection is immediately disabled.</strong></li>
-                            <li><strong>Legitimate Interest:</strong> We process data for security, fraud prevention, and service improvement based on our legitimate interest in providing and improving our services. <strong>Note: Analytics data processing is based on consent, not legitimate interest, for EEA users.</strong></li>
+                            <li><strong>Consent:</strong> When you register for an account, you agree that we process the account and service data needed to run Upasthiti. <strong>Where Google&rsquo;s User Messaging Platform (UMP) shows a consent form (for example, many EEA users):</strong> your choices there control personalized ads and, in our App, whether <strong>Firebase Analytics</strong> collection is turned on; if you decline in a way that disables analytics in our implementation, we disable Firebase Analytics. <strong>Where UMP indicates consent is not required for your device/region:</strong> Firebase Analytics may be enabled in release builds without that form, as permitted by applicable law and consistent with how our App reads UMP status.</li>
+                            <li><strong>Legitimate Interest:</strong> We rely on legitimate interests where appropriate (for example crash diagnostics as described for Crashlytics, security, fraud prevention, and running the service). <strong>Firebase Analytics in the EEA is not treated as relying on legitimate interest in place of consent when UMP requires a consent decision.</strong></li>
                             <li><strong>Legal Obligation:</strong> We process data to comply with legal obligations, such as data retention requirements, tax obligations, or responding to legal requests.</li>
                             <li><strong>Contract Performance:</strong> We process data to perform our contract with you, including providing attendance management services and app functionality.</li>
                         </ul>
@@ -146,20 +143,18 @@
                             <ul>
                                 <li>We implement strict access controls to ensure only authorized users can access your data</li>
                                 <li>Each user can only access their own classes and student data</li>
-                                <li>Authentication is required for all data access using Firebase Authentication</li>
-                                <li>Role-based access controls prevent unauthorized data access</li>
-                                <li>Data access is logged and monitored for security purposes</li>
+                                <li>Authentication is required for cloud data access using Firebase Authentication (email/password and optional phone verification)</li>
+                                <li>Firebase Security Rules are designed so each signed-in user can access only their own classes, students, and attendance data</li>
                             </ul>
                         </div>
                         <div class="security-item">
                             <h3>🔐 Security Measures</h3>
                             <ul>
-                                <li>Industry-standard security measures including encryption, firewalls, and intrusion detection</li>
-                                <li>Regular security audits and vulnerability assessments</li>
-                                <li>Secure authentication using Firebase Authentication with password hashing</li>
-                                <li>Data backup and recovery procedures to prevent data loss</li>
-                                <li>Regular security updates and patches to address vulnerabilities</li>
-                                <li>Secure API endpoints with authentication and rate limiting</li>
+                                <li>Industry-standard protections for data in transit and at rest, including encryption and safeguards provided by Google Cloud / Firebase</li>
+                                <li>We ship app updates and dependency updates to address known issues; we do not claim independent third-party penetration testing on every release</li>
+                                <li>Secure authentication using Firebase Authentication (including industry-standard handling of credentials by Google&rsquo;s infrastructure)</li>
+                                <li>Provider-side replication and backup practices from Google Cloud / Firebase (see Google&rsquo;s documentation)</li>
+                                <li>Authenticated access to Firebase services from the App</li>
                             </ul>
                         </div>
                     </div>
@@ -168,7 +163,7 @@
                 <!-- Crash Reporting and Diagnostics -->
                 <section class="section" id="crash-reporting">
                     <h2>Crash Reporting and Diagnostics (Firebase Crashlytics)</h2>
-                    <p>We use Firebase Crashlytics to help us detect crashes, errors, and performance issues so that we can keep the Upasthiti app stable and reliable.</p>
+                    <p>We use Firebase Crashlytics to help us detect crashes, errors, and performance issues so that we can keep the Upasthiti app stable and reliable. <strong>Crashlytics collection is turned off in debug builds</strong> of the App; in <strong>release</strong> builds it is enabled so we can receive crash reports from real users.</p>
 
                     <div class="info-card">
                         <h3>What Information Crashlytics Collects</h3>
@@ -211,10 +206,10 @@
                         <div class="service-card">
                             <h3>Google Firebase Services</h3>
                             <ul>
-                                <li><strong>Firebase Authentication:</strong> For secure user authentication, account management, and email verification</li>
+                                <li><strong>Firebase Authentication:</strong> For secure user authentication and account management, including <strong>email and password</strong> sign-in, <strong>email verification</strong> where used, and <strong>optional phone (SMS) verification</strong> when you choose that sign-in method</li>
                                 <li><strong>Cloud Firestore:</strong> For secure data storage, real-time synchronization, and data queries</li>
                                 <li><strong>Firebase Storage:</strong> For secure photo storage and file management</li>
-                                <li><strong>Firebase Analytics:</strong> For app usage analytics, user behavior tracking, and performance monitoring. Analytics data collection only occurs after you grant explicit consent (for EEA users). If you reject consent or withdraw it, analytics collection is immediately disabled.</li>
+                                <li><strong>Firebase Analytics:</strong> For aggregated usage analytics when enabled in the App. <strong>EEA / consent-required cases (per UMP):</strong> we enable collection only when your consent choices in our implementation allow it. <strong>Where UMP indicates consent is not required:</strong> collection may be enabled without an in-app consent form, as permitted by applicable law. You can reset consent preferences where the App offers that option, and you can limit ad-related signals in device settings.</li>
                                 <li><strong>Firebase Crashlytics:</strong> For crash reporting, error tracking, and app stability monitoring. Crash data is used only to diagnose technical issues and improve the app, not for advertising or profiling.</li>
                             </ul>
                             <div class="service-links">
@@ -229,7 +224,7 @@
                             <ul>
                                 <li>AdMob may collect and use information about your device and app usage to provide personalized ads</li>
                                 <li>AdMob uses cookies, device identifiers, and similar technologies to serve ads</li>
-                                <li>AdMob may collect: Device identifiers (Android Advertising ID), IP address, device information (model, OS), app usage data, location data (if permitted), ad interaction data</li>
+                                <li>AdMob may collect: Device identifiers (Android Advertising ID), IP address, device information (model, OS), app usage data, coarse or inferred location signals (often from IP or ad-ecosystem data), and ad interaction data. <strong>Upasthiti does not request GPS or precise location permissions for advertising.</strong></li>
                                 <li>AdMob works with third-party ad networks and advertisers who have their own privacy policies</li>
                                 <li>You can opt out of personalized advertising in your device settings: Android Settings > Google > Ads > Opt out of Ads Personalization</li>
                                 <li>You can reset your advertising ID in your device settings at any time</li>
@@ -265,7 +260,7 @@
                         <h3>How AdMob Works</h3>
                         <ul>
                             <li>AdMob uses Google's advertising technology to serve relevant ads to users</li>
-                            <li>Ads are displayed based on your device information, app usage, and location (if permitted)</li>
+                            <li>Ads are displayed based on your device information, app context, and signals such as IP-based coarse geography; <strong>we do not request location permissions in the App for ads</strong></li>
                             <li>AdMob uses real-time bidding to show the most relevant ads</li>
                             <li>Ad content is determined by AdMob and its advertising partners, not by us</li>
                         </ul>
@@ -278,7 +273,7 @@
                             <li><strong>Device Identifiers:</strong> Android Advertising ID (AAID), which can be reset by users</li>
                             <li><strong>Network Information:</strong> IP address (which may indicate general location), connection type</li>
                             <li><strong>App Usage Data:</strong> App version, time spent in app, features used, ad interactions</li>
-                            <li><strong>Location Data:</strong> General location information (country, city) if location permissions are granted</li>
+                            <li><strong>Approximate location signals:</strong> Ad partners may infer region (for example country or city) from IP address or similar signals. This is <strong>not</strong> from a location permission in Upasthiti</li>
                             <li><strong>Ad Interaction Data:</strong> Ad views, clicks, conversions, and engagement metrics</li>
                         </ul>
                     </div>
@@ -288,7 +283,7 @@
                         <ul>
                             <li><strong>Opt Out of Personalized Advertising:</strong> You can opt out in your Android device settings (Settings > Google > Ads > Opt out of Ads Personalization)</li>
                             <li><strong>Reset Advertising ID:</strong> You can reset your Android Advertising ID at any time in device settings</li>
-                            <li><strong>Location Controls:</strong> You can control location permissions in your device settings or app permissions</li>
+                            <li><strong>Location-related signals:</strong> Because we do not request a location permission for ads, coarse location used by ads is mainly influenced by network/IP and platform settings; review Google/ device ad privacy controls</li>
                             <li><strong>Ad Blockers:</strong> You may use ad blockers, but this may affect app functionality or user experience</li>
                             <li><strong>Note:</strong> Even if you opt out of personalized ads, you may still see ads, but they will be less relevant to your interests</li>
                         </ul>
@@ -307,14 +302,14 @@
                     </div>
 
                     <div class="info-card">
-                        <h3>GDPR Consent Flow (EEA Users)</h3>
-                        <p>If you are located in the European Economic Area (EEA), you will see a consent form when you first launch the app. This form is required by GDPR (General Data Protection Regulation) and allows you to control how your data is used for advertising purposes.</p>
+                        <h3>GDPR / UMP consent (where shown)</h3>
+                        <p>If you are in the <strong>EEA</strong> or another region where Google&rsquo;s User Messaging Platform (<strong>UMP</strong>) determines a consent form should be shown, <strong>you may see</strong> a consent message when you use the App. It helps you control certain advertising-related processing and (where applicable) how our App enables <strong>Firebase Analytics</strong>, consistent with our implementation.</p>
                     </div>
 
                     <div class="info-card">
-                        <h3>What You Will See (EEA Users Only)</h3>
+                        <h3>What you may see (when UMP requires it)</h3>
                         <ul>
-                            <li>When you first launch the app, a consent form will appear on your screen</li>
+                            <li>When required for your region, a consent form may appear (for example on first launch or until you complete it)</li>
                             <li>The form explains what data may be collected and how it will be used</li>
                             <li>You will see options to <strong>Accept All</strong>, <strong>Reject All</strong>, or <strong>Customize</strong> your preferences</li>
                             <li>The form is provided by Google's User Messaging Platform (UMP) and complies with GDPR requirements</li>
@@ -326,7 +321,7 @@
                         <ul>
                             <li><strong>Accept All:</strong> Allows personalized ads and data collection for advertising purposes. Ads will be tailored to your interests based on your device information and app usage.</li>
                             <li><strong>Reject All:</strong> Blocks personalized ads and limits data collection. You may still see non-personalized ads, but they will not be based on your interests or device information.</li>
-                            <li><strong>Customize:</strong> Allows you to choose specific data types to allow or block. You can select which purposes you consent to (e.g., personalized ads, analytics, etc.). Analytics data collection will only occur if you explicitly grant consent for analytics purposes. If you do not grant consent for analytics, analytics collection will be disabled.</li>
+                            <li><strong>Customize:</strong> Where offered, you can adjust categories in Google&rsquo;s form. Depending on your selections and how choices map to our App&rsquo;s integration, <strong>Firebase Analytics</strong> may remain off (for example when consent is treated as non-personalized / not granted for our analytics gate).</li>
                         </ul>
                     </div>
 
@@ -335,10 +330,10 @@
                         <ul>
                             <li>Your consent choice is saved locally on your device</li>
                             <li>The app will remember your choice and will not show the consent form again unless you reset it</li>
-                            <li>Your consent choice determines whether personalized ads and analytics data collection are enabled</li>
-                            <li>If you accept consent: Personalized ads and analytics data collection will be enabled</li>
-                            <li>If you reject consent: Personalized ads will be blocked, analytics data collection will be immediately disabled, and only limited non-personalized ads may be shown</li>
-                            <li><strong>Analytics data collection starts only after you grant explicit consent. If you reject consent or withdraw it at any time, analytics collection stops immediately</strong></li>
+                            <li>Your choices (where a form is shown) affect personalized advertising and, in our App, whether <strong>Firebase Analytics</strong> is turned on for that consent path</li>
+                            <li>If you accept options that allow personalized processing in our integration: personalized ads may be available and Firebase Analytics may be enabled</li>
+                            <li>If you decline in a way that blocks personalized processing in our integration: personalized ads are limited and Firebase Analytics is disabled</li>
+                            <li><strong>Where no form is required (UMP &ldquo;not required&rdquo;):</strong> Firebase Analytics may be enabled without that in-app consent step, as described elsewhere in this policy</li>
                         </ul>
                     </div>
 
@@ -353,11 +348,12 @@
                     </div>
 
                     <div class="info-card">
-                        <h3>Non-EEA Users</h3>
+                        <h3>When no UMP form is required</h3>
                         <ul>
-                            <li>If you are not located in the EEA, you will not see the consent form</li>
-                            <li>Ads will be displayed normally based on your device settings</li>
-                            <li>You can still opt out of personalized advertising through your Android device settings</li>
+                            <li>If UMP indicates consent is <strong>not required</strong> for your device/region, you may not see the same consent screen</li>
+                            <li>Ads may still be shown according to Google/AdMob rules and your Android and Google account ad settings</li>
+                            <li><strong>Firebase Analytics</strong> may be enabled in release builds without that form, as permitted by applicable law and our App configuration</li>
+                            <li>You can still limit ad personalization using Android/Google ad settings where available</li>
                         </ul>
                     </div>
 
@@ -365,7 +361,7 @@
                         <h3>Consent and Your Data</h3>
                         <ul>
                             <li>Your consent choice affects both advertising-related data collection and analytics data collection</li>
-                            <li><strong>Analytics data collection only occurs after you grant explicit consent (for EEA users). If you reject consent or withdraw it, analytics collection is immediately disabled.</strong></li>
+                            <li><strong>Firebase Analytics:</strong> In regions where UMP requires a consent flow, we gate analytics per the choices described above. In regions where UMP indicates consent is not required, analytics may run without that step. Crashlytics in release builds is separate and is described in its own section.</li>
                             <li>Your app data (attendance records, student information, classes) is not affected by your advertising or analytics consent choice</li>
                             <li>We do not share your personal information (name, email, student data) with advertisers regardless of your consent choice</li>
                             <li>Your consent is specific to advertising and analytics, and does not affect other app functionality</li>
