@@ -47,9 +47,9 @@ html {
 }
 
 .landing-nav-brand-name {
-  font-size: clamp(13px, 1.35vw, 18px);
-  font-weight: 800;
-  color: var(--text-dark, #212529);
+  font-size: clamp(15px, 1.7vw, 22px);
+  font-weight: 900;
+  color: #6200ee;
   margin-left: 14px;
   line-height: 1.1;
   letter-spacing: 0.01em;
