@@ -2,6 +2,11 @@
 
 .landing-page {
   background: var(--white, #fff);
+  animation: landing-page-fade 0.6s ease-out;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* ── NAV ── */
@@ -20,6 +25,7 @@
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid #e0e0e0;
+  animation: landing-fade-up 0.5s ease both;
 }
 
 .landing-nav-brand {
@@ -40,6 +46,14 @@
   display: block;
 }
 
+.landing-nav-brand-name {
+  font-size: clamp(12px, 1.25vw, 15px);
+  font-weight: 600;
+  color: var(--text-dark, #212529);
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
 .landing-nav-links {
   display: flex;
   gap: 28px;
@@ -54,12 +68,13 @@
   color: var(--text-dark, #212529);
   text-decoration: none;
   opacity: 0.85;
-  transition: color 0.2s, opacity 0.2s;
+  transition: color 0.2s, opacity 0.2s, transform 0.2s;
 }
 
 .landing-nav-links a:hover {
   color: var(--primary-purple, #6200ee);
   opacity: 1;
+  transform: translateY(-1px);
 }
 
 .landing-nav-cta {
@@ -656,7 +671,20 @@
   }
 }
 
+@keyframes landing-page-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
+  .landing-nav-brand-name {
+    display: none;
+  }
+
   .landing-nav-links {
     display: none;
   }

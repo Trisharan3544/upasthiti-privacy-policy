@@ -49,6 +49,7 @@
 
 html {
     background-color: #FFFFFF;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -57,6 +58,7 @@ body {
     color: var(--text-dark);
     background-color: #FFFFFF;
     overflow-x: hidden;
+    animation: page-fade-in 0.6s ease-out;
 }
 
 /* Container */
@@ -90,6 +92,7 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
+    animation: content-rise 0.7s ease-out both;
 }
 
 .logo {
@@ -132,6 +135,7 @@ body {
     padding: var(--spacing-xl) var(--spacing-xl);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     margin-bottom: var(--spacing-xl);
+    animation: content-rise 0.7s ease-out both;
 }
 
 .page-title {
@@ -688,6 +692,7 @@ body {
     color: var(--white);
     padding: var(--spacing-xl) 0;
     margin-top: var(--spacing-xl);
+    animation: page-fade-in 0.8s ease-out both;
 }
 
 .footer-content {
@@ -727,14 +732,43 @@ body {
     height: 50px;
     cursor: pointer;
     box-shadow: var(--shadow-medium);
-    transition: all 0.3s ease;
-    display: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.3s ease;
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
     z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 .back-to-top:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-heavy);
+}
+
+@keyframes page-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes content-rise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Design */
