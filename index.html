@@ -27,7 +27,7 @@
         <div class="container">
             <div class="content-wrapper">
                 <h1 class="page-title">Privacy Policy</h1>
-                <p class="last-updated">Last updated: April 19, 2026</p>
+                <p class="last-updated">Last updated: May 6, 2026</p>
 
                 <!-- Introduction -->
                 <section class="section" id="introduction">
@@ -44,7 +44,7 @@
                     <div class="info-card">
                         <h3>👤 Personal Information</h3>
                         <ul>
-                            <li>Name, <strong>email address</strong>, and/or <strong>phone number</strong> for account registration and authentication, depending on whether you use email/password or phone (SMS) sign-in with Firebase Authentication</li>
+                            <li>Name, <strong>email address</strong>, and optional <strong>phone number</strong> used for account registration, profile/contact details, and account support</li>
                             <li>Contact details you provide for account recovery or communication where you choose to supply them</li>
                             <li>Student information including names, roll numbers, phone numbers, and email addresses</li>
                             <li>Student photos uploaded for identification and record-keeping purposes</li>
@@ -206,7 +206,7 @@
                         <div class="service-card">
                             <h3>Google Firebase Services</h3>
                             <ul>
-                                <li><strong>Firebase Authentication:</strong> For secure user authentication and account management, including <strong>email and password</strong> sign-in, <strong>email verification</strong> where used, and <strong>optional phone (SMS) verification</strong> when you choose that sign-in method</li>
+                                <li><strong>Firebase Authentication:</strong> For secure user authentication and account management, including <strong>email and password</strong> sign-in with <strong>email verification</strong> before full app access</li>
                                 <li><strong>Cloud Firestore:</strong> For secure data storage, real-time synchronization, and data queries</li>
                                 <li><strong>Firebase Storage:</strong> For secure photo storage and file management</li>
                                 <li><strong>Firebase Analytics:</strong> For aggregated usage analytics when enabled in the App. <strong>EEA / consent-required cases (per UMP):</strong> we enable collection only when your consent choices in our implementation allow it. <strong>Where UMP indicates consent is not required:</strong> collection may be enabled without an in-app consent form, as permitted by applicable law. You can reset consent preferences where the App offers that option, and you can limit ad-related signals in device settings.</li>
@@ -252,7 +252,17 @@
                         <ul>
                             <li><strong>Banner Ads:</strong> Displayed at the top or bottom of certain app screens</li>
                             <li><strong>Interstitial Ads:</strong> Full-screen ads shown between app screens or after completing actions</li>
-                            <li><strong>App Open Ads:</strong> Full-screen ads that may appear when you launch the app or when it returns to the foreground from the background, before you continue to the main screen</li>
+                            <li><strong>App Open Ads:</strong> Full-screen ads that may appear when you launch the app (splash) or when it returns to the foreground from the background, before you continue to the main screen</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>When ads are shown (consent + subscription gating)</h3>
+                        <ul>
+                            <li><strong>Consent (UMP):</strong> We request ads only when Google&rsquo;s User Messaging Platform (UMP) indicates ads can be requested (for example, after you complete a consent flow where required, or when consent is not required for your region).</li>
+                            <li><strong>No Ads subscription:</strong> If you activate the optional <strong>&ldquo;Remove All Ads&rdquo;</strong> subscription, we do not load or show ads (including app open ads).</li>
+                            <li><strong>Network availability:</strong> Ads require an internet connection; if you are offline, ads may not load.</li>
+                            <li><strong>Sensitive screens:</strong> We suppress certain ads (for example app-open ads) on sensitive screens like login/register, privacy/terms, profile/settings, and the premium paywall to reduce accidental clicks.</li>
                         </ul>
                     </div>
 
@@ -399,7 +409,7 @@
                             <ul>
                                 <li>Request deletion of your personal data at any time</li>
                                 <li>Delete individual classes, students, and attendance records through the app</li>
-                                <li>Delete your entire account by contacting us at teamupasthiti@gmail.com</li>
+                                <li>Delete your entire account directly from the app at <strong>Profile &gt; Privacy Settings &gt; Delete Account &amp; Data</strong> or by contacting us at teamupasthiti@gmail.com</li>
                                 <li>Request deletion of student photos and associated files</li>
                                 <li>Note: Deletion requests will be processed within 30 days of receipt</li>
                             </ul>
@@ -623,9 +633,9 @@
         window.addEventListener('scroll', function() {
             const backToTop = document.querySelector('.back-to-top');
             if (window.scrollY > 300) {
-                backToTop.style.display = 'block';
+                backToTop.classList.add('visible');
             } else {
-                backToTop.style.display = 'none';
+                backToTop.classList.remove('visible');
             }
         });
 

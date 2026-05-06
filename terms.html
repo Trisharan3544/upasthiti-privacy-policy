@@ -27,7 +27,7 @@
         <div class="container">
             <div class="content-wrapper">
                 <h1 class="page-title">Terms of Service</h1>
-                <p class="last-updated">Last updated: April 19, 2026</p>
+                <p class="last-updated">Last updated: May 6, 2026</p>
 
                 <!-- Agreement to Terms -->
                 <section class="section" id="agreement">
@@ -68,7 +68,7 @@
                             <li>You must provide accurate, current, and complete information during registration</li>
                             <li>You must maintain and update your account information to keep it accurate</li>
                             <li>You may only create one account per person</li>
-                            <li>You must use a valid <strong>email address</strong> for email/password registration, or complete <strong>phone (SMS) verification</strong> when using phone sign-in, as applicable</li>
+                            <li>You must use a valid <strong>email address</strong> for registration/login and complete <strong>email verification</strong> before full app access</li>
                         </ul>
                     </div>
 
@@ -87,7 +87,7 @@
                     <div class="info-card">
                         <h3>Account Termination</h3>
                         <ul>
-                            <li>You may terminate your account at any time by contacting us at <a href="mailto:teamupasthiti@gmail.com">teamupasthiti@gmail.com</a></li>
+                            <li>You may terminate your account at any time from <strong>Profile &gt; Privacy Settings &gt; Delete Account &amp; Data</strong> in the app, or by contacting us at <a href="mailto:teamupasthiti@gmail.com">teamupasthiti@gmail.com</a></li>
                             <li>We may suspend or terminate your account for violations of these Terms</li>
                             <li>Upon termination, your right to use the App will immediately cease</li>
                             <li>We may delete your account and associated data as described in our Privacy Policy</li>
@@ -279,6 +279,7 @@
                             <li>We do not control the content, placement, or timing of advertisements displayed by AdMob</li>
                             <li>Advertisements may be personalized based on your device information and app usage patterns</li>
                             <li>Advertisements may include banners, full-screen interstitials, and app open ads when you launch or resume the app</li>
+                            <li><strong>Optional ads-free subscription:</strong> We may offer a paid subscription option such as <strong>&ldquo;Remove All Ads&rdquo;</strong>. When active, the app will not load or show ads (including app open ads).</li>
                         </ul>
                     </div>
 
@@ -509,9 +510,9 @@
         window.addEventListener('scroll', function() {
             const backToTop = document.querySelector('.back-to-top');
             if (window.scrollY > 300) {
-                backToTop.style.display = 'block';
+                backToTop.classList.add('visible');
             } else {
-                backToTop.style.display = 'none';
+                backToTop.classList.remove('visible');
             }
         });
 
