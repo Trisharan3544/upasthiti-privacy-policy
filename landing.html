@@ -102,7 +102,7 @@
         <div class="landing-feature-card">
           <div class="landing-feature-icon landing-fi-amber">📷</div>
           <div class="landing-feature-title">Student photos</div>
-          <div class="landing-feature-desc">Optional student photos via the Android system picker — stored securely in Firebase Storage.</div>
+          <div class="landing-feature-desc">Optional student photos via the Android system picker — stored as Base64 in Cloud Firestore under your account.</div>
         </div>
 
         <div class="landing-feature-card">
@@ -126,7 +126,7 @@
         <div class="landing-feature-card">
           <div class="landing-feature-icon landing-fi-blue">📊</div>
           <div class="landing-feature-title">PDF &amp; CSV reports</div>
-          <div class="landing-feature-desc">Monthly and custom date-range reports with attendance percentages — export PDF or CSV.</div>
+          <div class="landing-feature-desc">Monthly and custom date-range reports with attendance percentages — export PDF or CSV on your device (not uploaded to cloud storage).</div>
         </div>
 
         <div class="landing-feature-card">
@@ -249,7 +249,7 @@
         <div class="landing-step">
           <div class="landing-step-num">04</div>
           <div class="landing-step-title">Export reports</div>
-          <div class="landing-step-desc">Track summaries and export attendance reports in PDF and CSV when you need them.</div>
+          <div class="landing-step-desc">Track summaries and export attendance reports in PDF and CSV to your device when you need them — reports are not uploaded to Firebase Storage.</div>
         </div>
       </div>
     </div>
@@ -274,7 +274,7 @@
           <div class="landing-privacy-icon">🗃️</div>
           <div>
             <div class="landing-privacy-title">Attendance &amp; students</div>
-            <div class="landing-privacy-desc">Stored securely in Firebase under your account. Only you can access your classes, students, and attendance.</div>
+            <div class="landing-privacy-desc">Classes, students, and attendance sync securely in Firebase under your account. PDF/CSV reports stay on your device only — not uploaded to cloud storage. Optional student photos are Base64 in Firestore; optional class logos use Storage.</div>
           </div>
         </div>
         <div class="landing-privacy-item">
@@ -295,7 +295,7 @@
           <div class="landing-privacy-icon">🗑️</div>
           <div>
             <div class="landing-privacy-title">Data deletion</div>
-            <div class="landing-privacy-desc">Delete your account and synced data from Profile &gt; Privacy Settings &gt; Delete Account &amp; Data, or contact us.</div>
+            <div class="landing-privacy-desc">Delete your account and synced cloud data (Auth, Firestore, class logos in Storage, and any legacy Storage leftovers) from Profile &gt; Privacy Settings &gt; Delete Account &amp; Data, or contact us.</div>
           </div>
         </div>
         <div class="landing-privacy-item">

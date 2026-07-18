@@ -47,7 +47,8 @@
                             <li>Name, <strong>email address</strong>, and optional <strong>phone number</strong> used for account registration, profile/contact details, and account support</li>
                             <li>Contact details you provide for account recovery or communication where you choose to supply them</li>
                             <li>Student information including names, roll numbers, phone numbers, and email addresses</li>
-                            <li>Student photos uploaded for identification and record-keeping purposes (selected via the Android system photo picker; stored in Firebase Storage)</li>
+                            <li>Student photos you optionally upload via the Android system photo picker are stored as <strong>Base64-encoded image data in Cloud Firestore</strong> (on the student record), not as separate files in Firebase Storage</li>
+                            <li>Optional <strong>class / institute logos</strong> you upload are stored in <strong>Firebase Storage</strong> under a user-scoped temporary path</li>
                             <li>Class, department, and institute/workspace name you create or enter</li>
                             <li>Profile information and account preferences (including reminder and notification choices)</li>
                             <li>Optional in-app <strong>feedback</strong> you submit (message text, associated with your user ID and email)</li>
@@ -63,7 +64,7 @@
                             <li>Class attendance summaries, completion status, and statistics</li>
                             <li>Date-based attendance tracking and reports (including past/backdated dates where unlocked)</li>
                             <li>Monthly and custom date range attendance data</li>
-                            <li>Attendance reports generated in PDF and CSV formats</li>
+                            <li>Attendance reports you generate in <strong>PDF and CSV</strong> formats (saved on your device only; not uploaded to Firebase Storage)</li>
                             <li>Technical metadata needed for integrity (for example last-modified time, whether a mark was backdated, and whether a rewarded unlock was used)</li>
                         </ul>
                     </div>
@@ -154,11 +155,13 @@
                         <div class="security-item">
                             <h3>🔒 Secure Cloud Storage</h3>
                             <ul>
-                                <li>All data is stored securely in Google Firebase Cloud Firestore</li>
-                                <li>Student photos are stored in Google Firebase Storage with secure access rules</li>
-                                <li>Data is encrypted both in transit (using TLS/SSL) and at rest using industry-standard encryption</li>
-                                <li>Data is automatically backed up and replicated across multiple secure servers</li>
-                                <li>Data retention policies ensure information is kept only as long as necessary</li>
+                                <li>Account, class, student, and attendance data are stored securely in <strong>Google Firebase Cloud Firestore</strong></li>
+                                <li><strong>Student profile photos</strong> are stored as <strong>Base64-encoded images in Cloud Firestore</strong> (on your student documents), protected by Firestore Security Rules so only your signed-in account can read or write them</li>
+                                <li><strong>PDF and CSV attendance reports</strong> you generate are saved on your device only and are <strong>not uploaded</strong> to Firebase Storage</li>
+                                <li>Optional <strong>class logos</strong> are stored in <strong>Firebase Storage</strong> under <code>temp/{your user id}/</code> (owner-only access)</li>
+                                <li>All network communication with Firebase and Google services uses <strong>HTTPS/TLS</strong> encryption in transit; Google encrypts data at rest</li>
+                                <li>Data is replicated across Google&rsquo;s secure infrastructure; we retain data only while your account exists or as required for legal/security purposes</li>
+                                <li><strong>Deletion:</strong> When you delete your account (in-app or via our account-deletion page), we delete your Firebase Authentication account, your Firestore user data (including Base64 student photos), and your Firebase Storage files under <code>temp/{uid}/</code> (class logos) and any legacy leftovers under <code>reports/{uid}/</code>. A Cloud Function also runs after Auth deletion to remove any leftover Storage or Firestore data</li>
                             </ul>
                             <h3>Cross-Border Data Transfers</h3>
                             <ul>
@@ -238,7 +241,7 @@
                             <ul>
                                 <li><strong>Firebase Authentication:</strong> For secure user authentication and account management, including <strong>email and password</strong> sign-in with <strong>email verification</strong> before full app access</li>
                                 <li><strong>Cloud Firestore:</strong> For secure data storage, real-time synchronization, and data queries</li>
-                                <li><strong>Firebase Storage:</strong> For secure photo storage and file management</li>
+                                <li><strong>Firebase Storage:</strong> For optional class logos only (not for student profile photos or PDF/CSV attendance reports)</li>
                                 <li><strong>Firebase Cloud Messaging (FCM):</strong> For optional push notifications (updates, alerts, and related messages)</li>
                                 <li><strong>Firebase Cloud Functions:</strong> Server-side processing to verify AdMob rewarded-ad unlocks (SSV) and to sync Google Play subscription entitlement for Upasthiti Pro</li>
                                 <li><strong>Firebase Analytics:</strong> For aggregated usage analytics when enabled in the App. <strong>EEA / consent-required cases (per UMP):</strong> we enable collection only when your consent choices in our implementation allow it. <strong>Where UMP indicates consent is not required:</strong> collection may be enabled without an in-app consent form, as permitted by applicable law. You can reset consent preferences where the App offers that option, and you can limit ad-related signals in device settings.</li>
@@ -255,7 +258,7 @@
                             <p>Optional <strong>Upasthiti Pro</strong> subscriptions (monthly or yearly) are purchased and managed through Google Play Billing.</p>
                             <ul>
                                 <li>Google processes payments and stores purchase records according to Google&rsquo;s policies</li>
-                                <li>We receive subscription status and related purchase tokens/IDs needed to unlock Pro features and verify entitlement</li>
+                                <li>We receive subscription status needed to unlock Pro features (entitlement flags and expiry stored on your Firestore user profile). We process purchase tokens with Google Play only to verify entitlement; we do <strong>not</strong> store full payment card numbers</li>
                                 <li>We do not receive or store your full payment card details</li>
                                 <li>You can manage or cancel subscriptions in Google Play (Subscriptions)</li>
                             </ul>
@@ -439,7 +442,7 @@
                             <ul>
                                 <li>Request access to your personal data at any time</li>
                                 <li>View all data stored in your account through the app settings</li>
-                                <li>Export your attendance reports and data in PDF or CSV formats</li>
+                                <li>Export your attendance reports in PDF or CSV formats (saved on your device; not uploaded to Firebase Storage)</li>
                                 <li>Access your account information through the Profile section</li>
                             </ul>
                         </div>
@@ -467,9 +470,9 @@
                             <h3>📤 Export Your Data</h3>
                             <ul>
                                 <li>Request a copy of your data in a portable format</li>
-                                <li>Export attendance reports in PDF or CSV format through the app's report generation feature</li>
+                                <li>Export attendance reports in PDF or CSV format through the app's report generation feature (saved on your device; not uploaded to Firebase Storage)</li>
                                 <li>Download your data including classes, students, and attendance records</li>
-                                <li>Generate monthly reports and custom date range reports for export</li>
+                                <li>Generate monthly reports and custom date range reports for local export</li>
                             </ul>
                         </div>
                     </div>
@@ -560,7 +563,7 @@
                         <ul>
                             <li>Teachers and school or coaching-institute staff may enter student personal data (names, roll numbers, optional photos, optional email/phone) so the App can provide attendance and reporting for that institution.</li>
                             <li>That student/minor data is processed on behalf of the adult account holder and their institution; it is not collected from children as App users.</li>
-                            <li>Optional student photos you upload are stored in Google Firebase Storage (not used for advertising).</li>
+                            <li>Optional student photos you upload are stored as Base64-encoded data in Cloud Firestore (not in Firebase Storage; not used for advertising).</li>
                             <li>Teachers and administrators are responsible for obtaining necessary consents before entering student information</li>
                             <li>We comply with applicable laws regarding children's data protection (COPPA, GDPR-K, DPDP Act, etc.)</li>
                             <li>Student data is protected with the same security measures as other user data</li>
@@ -620,15 +623,16 @@
                     <p>This summary aligns with our Google Play Data safety form and in-app practices:</p>
                     <ul class="usage-list">
                         <li><strong>Personal info:</strong> Account email; optional phone; profile/institute name; student names, roll numbers, optional student contact details you enter; optional feedback text you submit</li>
-                        <li><strong>Photos:</strong> Student photos you optionally upload via the system picker (stored in Firebase Storage)</li>
-                        <li><strong>App activity:</strong> Attendance marks (including holiday/backdated metadata), class/department records, reports, bulk import activity, preferences needed for the service</li>
+                        <li><strong>Photos:</strong> Student photos you optionally upload via the system picker (stored as Base64 in Cloud Firestore). Optional class logos use Firebase Storage</li>
+                        <li><strong>Files and docs:</strong> Not collected in the cloud — PDF/CSV attendance reports are generated and stored on your device only</li>
+                        <li><strong>App activity:</strong> Attendance marks (including holiday/backdated metadata), class/department records, bulk import activity, preferences needed for the service</li>
                         <li><strong>App info and performance:</strong> Crash logs and diagnostics (Firebase Crashlytics in release builds)</li>
                         <li><strong>Device or other IDs:</strong> Advertising ID when ads are shown; Firebase identifiers for auth and sync; FCM token for push delivery</li>
-                        <li><strong>Financial info:</strong> Upasthiti Pro subscriptions are billed by Google Play &mdash; we do not receive your full payment card details; we store entitlement/status needed to unlock Pro</li>
-                        <li><strong>Location:</strong> No precise GPS collected by us for core features; ad partners may infer coarse region from IP when ads load</li>
+                        <li><strong>Financial info / Purchase history:</strong> Upasthiti Pro subscriptions are billed by Google Play &mdash; we do not receive your full payment card details; we store entitlement/status (and expiry) needed to unlock Pro after server verification</li>
+                        <li><strong>Location:</strong> No precise GPS and no location permission for core features; Google Mobile Ads / AdMob may use approximate location signals (often inferred from IP) for advertising</li>
                         <li><strong>Notifications:</strong> Optional local attendance reminders and optional FCM push messages (requires notification permission where applicable)</li>
-                        <li><strong>Advertising (free tier):</strong> Banner, interstitial, app-open, and rewarded ads via Google AdMob (rewarded ads may unlock limited features such as past-date attendance editing)</li>
-                        <li><strong>Deletion:</strong> Profile &gt; Privacy Settings &gt; Delete Account &amp; Data, or email teamupasthiti@gmail.com</li>
+                        <li><strong>Advertising (free tier):</strong> Banner, interstitial, app-open, and rewarded ads via Google AdMob (rewarded ads may unlock limited features such as past-date attendance editing after server-side verification)</li>
+                        <li><strong>Deletion:</strong> Profile &gt; Privacy Settings &gt; Delete Account &amp; Data, our hosted account-deletion page, or email teamupasthiti@gmail.com &mdash; removes Auth, Firestore (including photos), and Storage (<code>temp/</code> class logos and any legacy leftovers under <code>reports/</code>)</li>
                     </ul>
                 </section>
 
@@ -661,6 +665,7 @@
             <div class="footer-content">
                 <p>&copy; 2026 Upasthiti. All rights reserved.</p>
                 <div class="footer-links">
+                    <a href="landing.html" class="footer-link">Home</a>
                     <a href="index.html" class="footer-link">Privacy Policy</a>
                     <a href="terms.html" class="footer-link">Terms of Service</a>
                     <a href="https://trisharan3544.github.io/upasthiti-account-deletion/" id="account-deletion-link" class="footer-link" target="_blank" rel="noopener noreferrer">Delete Account</a>
