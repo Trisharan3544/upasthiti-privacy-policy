@@ -419,6 +419,41 @@ html {
 .landing-fi-teal { background: #ccfbf1; }
 .landing-fi-red { background: #fee2e2; }
 
+.landing-all-features {
+  margin-top: 40px;
+  text-align: left;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px 28px;
+  background: var(--white, #fff);
+  border: 1px solid #e8e8e8;
+  border-radius: var(--radius-md, 12px);
+}
+
+.landing-all-features h3 {
+  font-size: 1.15rem;
+  margin: 0 0 14px;
+  color: var(--text-dark, #212529);
+  font-weight: 700;
+}
+
+.landing-feature-checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 8px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-muted, #6c757d);
+}
+
+.landing-feature-checklist li {
+  padding-left: 0;
+}
+
 .landing-feature-title {
   font-size: 15px;
   font-weight: 700;
